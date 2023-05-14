@@ -19,7 +19,7 @@ const Projects = () => {
                   src={data.imageProject}
                   width={600}
                   height={600}
-                  alt="Crows"
+                  alt={data.id}
                   className="border border-black p-4"
                 />
               </Link>
