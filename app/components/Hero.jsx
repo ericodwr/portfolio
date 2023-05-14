@@ -8,10 +8,11 @@ const Hero = () => {
       <div className=" w-[100%] flex md:justify-normal justify-center">
         <div className="flex md:justify-normal justify-center">
           <Image
+            priority
             src={'/me.svg'}
             alt="me"
-            width={600}
-            height={600}
+            width={1000}
+            height={1000}
             className="border lg:w-[50%] md:w-[60%] w-[50%] border-black"
           />
         </div>

@@ -12,11 +12,12 @@ const Navigation = () => {
 
   return (
     <>
+      {/* transition duration-1000 animate-shows */}
       <nav
-        className={`bg-inherit text-xl w-[100%] top-0 transition duration-1000 animate-shows z-10
+        className={`bg-inherit lg:text-2xl md:text-xl w-[100%]
         `}
       >
-        <ul className=" flex justify-between p-5">
+        <ul className=" flex justify-between sm:p-5 pt-2">
           <div>
             <Link href={'/'}>
               <li>ercdwr</li>

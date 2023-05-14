@@ -16,9 +16,9 @@ const Tech = () => {
               key={icon}
               src={`/techs/${icon}.svg`}
               alt={icon}
-              height={600}
-              width={600}
-              className="md:w-[40%] w-[50%] mx-3 md:mx-8"
+              height={1000}
+              width={1000}
+              className="md:w-[40%] w-[50%] sm:mx-3 md:mx-8 mx-1.5"
             />
           ))}
         </div>
