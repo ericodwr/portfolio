@@ -16,8 +16,8 @@ const page = ({ params }) => {
           <Image
             src={data.imageProject}
             priority
-            height={600}
-            width={600}
+            height={1000}
+            width={1000}
             alt={data.id}
             className="w-[100%] border border-black"
           />

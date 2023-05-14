@@ -11,8 +11,8 @@ const Hero = () => {
             priority
             src={'/me.svg'}
             alt="me"
-            width={1000}
-            height={1000}
+            width={2000}
+            height={2000}
             className="border lg:w-[40%] sm:w-[40%] md:w-[60%] w-[40%] border-black"
           />
         </div>
