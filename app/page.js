@@ -1,7 +1,16 @@
+import Contact from './components/Contact';
+import Hero from './components/Hero';
+import Projects from './components/Projects';
+import Tech from './components/Tech';
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1>MY PORTOFOLIO</h1>
-    </main>
+    <>
+      {/* <a href="/#work">test</a> */}
+      <Hero />
+      <Tech />
+      <Projects />
+      <Contact />
+    </>
   );
 }
