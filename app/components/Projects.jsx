@@ -7,9 +7,9 @@ import projectsData from '../data';
 const Projects = () => {
   return (
     <>
-      <div id="work" className="min-h-screen mt-20  flex-col">
-        <h1 className="sm:text-1xl md:text-3xl lg:text-4xl mb-14">
-          Selected Projects:
+      <div id="work" className="min-h-screen md:mt-20 mt-10 flex-col">
+        <h1 className="sm:text-2xl md:text-3xl lg:text-4xl md:mb-14 mb-6">
+          Selected Projects :
         </h1>
         <div className="grid gap-4 xl:gap-x-60 grid-cols-1 md:grid-cols-2 grid-rows-1 w-[100%] justify-items-center">
           {projectsData.map((data, i) => (

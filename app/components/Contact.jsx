@@ -45,7 +45,7 @@ const Contact = () => {
                 key={data.link}
               >
                 <Image
-                  className="md:w-[100%] sm:w-[60%] w-[50%]"
+                  className="md:w-[60%] lg:w-[80%] sm:w-[60%] w-[50%]"
                   src={data.img}
                   alt={data.img}
                   height={600}

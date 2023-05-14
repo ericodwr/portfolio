@@ -18,7 +18,7 @@ const Tech = () => {
               alt={icon}
               height={1000}
               width={1000}
-              className="md:w-[40%] w-[50%] sm:mx-3 md:mx-8 mx-1.5"
+              className="md:w-[30%] lg:w-[30%] xl:w-[25%] sm:w-[30%] w-[40%] sm:mx-3 md:mx-8 mx-1.5"
             />
           ))}
         </div>
