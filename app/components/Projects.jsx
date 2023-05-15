@@ -21,6 +21,7 @@ const Projects = () => {
                   height={600}
                   alt={data.id}
                   className="border border-black p-4"
+                  key={i}
                 />
               </Link>
               <h1 className="lg:text-2xl md:text-xl text-center capitalize my-2">

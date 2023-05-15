@@ -21,10 +21,10 @@ const projectsData = [
     id: 'crowns',
     imageProject: '/projects/crowns.jpg',
     title: ' Crowns',
-    description: `Crowns is a e-commerce web app which developed using React.Js. Using simple sass for the UI. For the back end is using firebase for the storage and user account, context for passing data and the last is using Stripe for payment methods. Crowns is e-commerce app who target a young-people to buy the products. Crowns has a great authentication because the user can log in using google account so the user is not always have to create a new account in this web app.In this web app, user just do 3 things, login, checkout, and pay. And the products is on the way to user's home. Crowns have 5 catalogs, and will be more in the future. (apparently in demo version pay features is off because there is some trouble).`,
+    description: `Crowns is a e-commerce web app which developed using React.Js. Using simple sass for the UI. For the back end is using firebase for the storage and user account, context for passing data and the last is using Stripe for payment methods. Crowns is e-commerce app who target a young-people to buy the products. Crowns has a great authentication because the user can log in using google account so the user is not always have to create a new account in this web app.In this web app, user just do 3 things, login, checkout, and pay. And the products is on the way to user's home. Crowns have 5 catalogs, and will be more in the future.`,
     left: true,
     code: 'https://github.com/ericodwr/crowns',
-    demo: 'https://crowns-edr.netlify.app/',
+    demo: 'https://crowns-clot.netlify.app/',
   },
   {
     id: 'ucars',
@@ -37,12 +37,12 @@ const projectsData = [
   },
   {
     id: 'carlist',
-    imageProject: '/projects/test.jpg',
+    imageProject: '/projects/ucarlist.jpg',
     title: 'Car List',
     description: `Car List is a Web App about databases that contains list of cars.Car List is developed using React.JS, for the style using Material UI and last for the databases using simple json-server and fetch it to Redux State. Car List is admin site only, so the admin could create, update, read, and delete or as we known it CRUD.`,
     left: true,
     code: 'https://github.com/ericodwr/CarList',
-    demo: 'asdad',
+    demo: 'https://github.com/ericodwr/CarList',
   },
 ];
 

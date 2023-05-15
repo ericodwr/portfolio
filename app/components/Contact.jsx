@@ -5,6 +5,7 @@ import Link from 'next/link';
 import React from 'react';
 
 import { MdOutlineArrowUpward } from 'react-icons/md';
+import Button from './Button';
 
 const contactsData = [
   {
@@ -33,7 +34,12 @@ const Contact = () => {
         <h1 className="sm:text-1xl md:text-3xl lg:text-4xl mb-10">
           Looking for Front End Developer?
         </h1>
-        <button className="mb-10">GET IN TOUCH</button>
+        <a
+          href={'mailto:erikodwirosadi12@gmail.com'}
+          className="mb-10 border border-black py-2 px-4 rounded-full "
+        >
+          GET IN TOUCH
+        </a>
         <div className="flex mt-6 justify-center">
           {contactsData.map((data) => {
             return (
@@ -45,7 +51,7 @@ const Contact = () => {
                 key={data.link}
               >
                 <Image
-                  className="md:w-[60%] lg:w-[80%] sm:w-[60%] w-[50%]"
+                  className="md:w-[60%] lg:w-[80%] sm:w-[60%] w-[50%] "
                   src={data.img}
                   alt={data.img}
                   height={600}
