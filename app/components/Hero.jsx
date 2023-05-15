@@ -50,12 +50,12 @@ const Hero = () => {
           My name Erico Dwi and I'm Front End Developer whom specialist on React
           JS.
         </p>
-        <Link
+        <a
           href={'#work'}
           className="lg:text-2xl text-lg border-b-2 md:m-0 mt-5 border-black hover:text-[#FFCC74] hover:border-[#FFCC74] transition duration-1000 ease-in-out"
         >
           Here's some of my projects
-        </Link>
+        </a>
       </motion.div>
     </main>
   );
