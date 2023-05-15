@@ -1,11 +1,27 @@
+'use client';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
+import { motion } from 'framer-motion';
+
+// initial={{ opacity: 0, y: 20 }}
+//     animate={{ opacity: 1, y: 0, transition: { delay: 0.2} }}
+//     exit={{ opacity: 0, y: 20 }}
+
 const Hero = () => {
   return (
     <main className="flex h-[70vh] w-[100%] items-center md:justify-between justify-center md:flex-row flex-col">
-      <div className=" w-[100%] flex md:justify-normal justify-center">
+      <motion.div
+        initial={{ opacity: 0, x: -500 }}
+        animate={{
+          opacity: 1,
+          x: 0,
+          transition: { delay: 0.5, duration: 0.5 },
+        }}
+        exit={{ opacity: 0, x: 20 }}
+        className=" w-[100%] flex md:justify-normal justify-center"
+      >
         <div className="flex md:justify-normal justify-center">
           <Image
             priority
@@ -16,8 +32,17 @@ const Hero = () => {
             className="border lg:w-[40%] sm:w-[40%] md:w-[60%] w-[40%] border-black"
           />
         </div>
-      </div>
-      <div className="flex flex-col md:justify-between justify-center h-[30vh] md:ml-12 items-start">
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, x: 500 }}
+        animate={{
+          opacity: 1,
+          x: 0,
+          transition: { delay: 0.5, duration: 0.5 },
+        }}
+        exit={{ opacity: 1, x: 20 }}
+        className="flex flex-col md:justify-between justify-center h-[30vh] md:ml-12 items-start"
+      >
         <h1 className="sm:text-1xl md:text-3xl lg:text-4xl text-lg">
           FRONT END DEVELOPER
         </h1>
@@ -31,7 +56,7 @@ const Hero = () => {
         >
           Here's some of my projects
         </Link>
-      </div>
+      </motion.div>
     </main>
   );
 };
