@@ -1,11 +1,10 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
 import React from 'react';
 
 import { MdOutlineArrowUpward } from 'react-icons/md';
-import Button from './Button';
+import { motion } from 'framer-motion';
 
 const contactsData = [
   {
@@ -34,18 +33,32 @@ const Contact = () => {
         <h1 className="sm:text-1xl md:text-3xl lg:text-4xl mb-10">
           Looking for Front End Developer?
         </h1>
-        <a
+        <motion.a
+          whileHover={{
+            scale: 1.02,
+            transition: { duration: 0.2 },
+          }}
+          whileTap={{
+            rotateY: 360,
+          }}
           href={'mailto:erikodwirosadi12@gmail.com'}
           className="mb-10 border border-black py-2 px-4 rounded-full "
         >
           GET IN TOUCH
-        </a>
+        </motion.a>
         <div className="flex mt-6 justify-center">
           {contactsData.map((data) => {
             return (
-              <Link
+              <motion.a
+                whileHover={{
+                  scale: 1.02,
+                  transition: { duration: 0.2 },
+                  rotateZ: 360,
+                }}
+                whileTap={{
+                  scale: 0.8,
+                }}
                 href={data.link}
-                passHref
                 target="_blank"
                 className="mx-6 md:mx-12"
                 key={data.link}
@@ -57,7 +70,7 @@ const Contact = () => {
                   height={600}
                   width={600}
                 />
-              </Link>
+              </motion.a>
             );
           })}
         </div>

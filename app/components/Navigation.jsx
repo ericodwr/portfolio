@@ -29,14 +29,12 @@ const Navigation = () => {
           </Link>
         </div>
         <div className="md:flex justify-around flex">
-          <Link
-            passHref={true}
-            scroll={false}
+          <a
             href={'/#work'}
             className="sm:mr-16 mr-6 hover:border-b-2 hover:border-black transition duration-1000 ease-in-out"
           >
             <li>Work.</li>
-          </Link>
+          </a>
           <Link
             href={'/about'}
             className="hover:border-b-2 hover:border-black transition duration-1000 ease-in-out"
