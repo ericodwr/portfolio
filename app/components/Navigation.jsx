@@ -12,38 +12,47 @@ const Navigation = () => {
 
   /* transition duration-1000 animate-shows */
   return (
-    <motion.nav
-      initial={{ opacity: 0, y: -200 }}
-      animate={{
-        opacity: 1,
-        y: 0,
-        transition: { delay: 0.2, duration: 0.5 },
-      }}
-      className={`bg-inherit lg:text-2xl md:text-xl w-[100%]
+    <>
+      <motion.nav
+        initial={{ opacity: 0, y: -200 }}
+        animate={{
+          opacity: 1,
+          y: 0,
+          transition: { delay: 0.2, duration: 0.5 },
+        }}
+        className={`bg-inherit lg:text-2xl md:text-xl w-[100%]
         `}
-    >
-      <ul className=" flex justify-between sm:p-5 pt-2">
-        <div>
-          <Link href={'/'}>
-            <li>ercdwr</li>
-          </Link>
-        </div>
-        <div className="md:flex justify-around flex">
-          <a
-            href={'/#work'}
-            className="sm:mr-16 mr-6 hover:border-b-2 hover:border-black transition duration-1000 ease-in-out"
-          >
-            <li>Work.</li>
-          </a>
-          <Link
-            href={'/about'}
-            className="hover:border-b-2 hover:border-black transition duration-1000 ease-in-out"
-          >
-            <li>Me.</li>
-          </Link>
-        </div>
-      </ul>
-    </motion.nav>
+      >
+        <ul className=" flex justify-between sm:p-5 pt-2">
+          <li>
+            <Link href={'/'}>
+              <p>ercdwr</p>
+            </Link>
+          </li>
+          <li className="md:flex justify-around flex">
+            <motion.a
+              whileHover={{
+                borderBottom: '1px solid black',
+              }}
+              href={'/#work'}
+              className="sm:mr-16 mr-6
+            "
+            >
+              <p>Work.</p>
+            </motion.a>
+            <motion.a
+              whileHover={{
+                borderBottom: '1px solid black',
+              }}
+              href={'/about'}
+            >
+              <p>Me.</p>
+            </motion.a>
+          </li>
+        </ul>
+      </motion.nav>
+      <div className="p-5" />
+    </>
   );
 };
 
