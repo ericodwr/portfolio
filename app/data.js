@@ -7,6 +7,7 @@ const projectsData = [
 
     code: 'https://github.com/ericodwr/cryptoverse',
     demo: 'https://cryptoverse-edr.netlify.app/',
+    tech: ['React Js', 'Redux', 'Ant Design'],
   },
   {
     id: 'real-estate',
@@ -16,6 +17,7 @@ const projectsData = [
 
     code: 'https://github.com/ericodwr/erc-real-estate',
     demo: 'https://erc-real-estate.vercel.app/',
+    tech: ['Nex Js', 'Chakra UI'],
   },
   {
     id: 'crowns',
@@ -25,6 +27,7 @@ const projectsData = [
 
     code: 'https://github.com/ericodwr/crowns',
     demo: 'https://crowns-clot.netlify.app/',
+    tech: ['React Js', 'Redux', 'firebase', 'sass', 'Typescript'],
   },
   {
     id: 'ucars',
@@ -34,6 +37,7 @@ const projectsData = [
 
     code: 'https://github.com/ericodwr/ucars-landingPage',
     demo: 'https://ucars-landing-page.netlify.app/',
+    tech: ['React Js', 'Material UI'],
   },
   {
     id: 'carlist',
@@ -43,6 +47,7 @@ const projectsData = [
 
     code: 'https://github.com/ericodwr/CarList',
     demo: 'https://github.com/ericodwr/CarList',
+    tech: ['React Js', 'Redux', 'Material UI', 'json-server'],
   },
   {
     id: 'opentable',
@@ -51,6 +56,7 @@ const projectsData = [
     description: `Open Table is Web App from Bootcamp using Next.Js 13, about application helping restaurants of all sizes thrive, to easily find by user for an occasion. And for user to find restaurants easily with specific requirements by using filter in this App. Developed by newest Next Js version which is Next Js version 13 with authentication and data fetching using Prisma ORM for fetching from Postgres SQL.`,
     code: 'https://github.com/ericodwr/openTable',
     demo: 'https://open-table-sigma.vercel.app/',
+    tech: ['Next Js', 'Typescript', 'Prisma', 'Postgres SQL', 'jsonwebtoken'],
   },
 ];
 

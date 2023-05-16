@@ -87,6 +87,16 @@ const Project = ({ data }) => {
           <p className="text-justify sm:text-base text-xs">
             {data.description}
           </p>
+          <div className="mt-4 flex justify-around items-center text-xs">
+            {data.tech.map((name, i) => (
+              <span
+                key={i}
+                className="bg-slate-400 py-1 px-2 rounded-full text-slate-700 capitalize"
+              >
+                {name}
+              </span>
+            ))}
+          </div>
         </div>
       </motion.div>
     </>
