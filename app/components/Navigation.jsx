@@ -43,6 +43,7 @@ const Navigation = () => {
             <motion.a
               whileHover={{
                 borderBottom: '1px solid black',
+                transition: { ease: 'linear', duration: 0.5 },
               }}
               href={'/about'}
             >
