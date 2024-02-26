@@ -1,113 +1,585 @@
-import Image from "next/image";
+'use client';
+
+import Image from 'next/image';
+import { useEffect } from 'react';
+import { motion, useAnimate, useInView, useScroll } from 'framer-motion';
+
+const iconData = [
+  'nextjs',
+  'angularjs',
+  'react',
+  'js',
+  'tailwindcss',
+  'redux',
+  'nodejs',
+  'springboot',
+  'prisma',
+];
+
+const contactsData = [
+  {
+    imgUrl: 'ig',
+    link: 'https://www.instagram.com/ericodwr?igsh=NWcxZmNmNXkxZnBv&utm_source=qr',
+  },
+  { imgUrl: 'linkedin', link: 'https://www.linkedin.com/in/ericodwir/' },
+  { imgUrl: 'github', link: 'https://github.com/ericodwr' },
+];
+
+const projects = [
+  [
+    {
+      title: 'Crownsco',
+      tech: ['React Js', 'Redux', 'Firebase'],
+      imgUrl: 'projects/crowns.svg',
+      large: false,
+      link: 'https://crowns-clot.netlify.app/',
+    },
+    {
+      title: 'Open Table',
+      tech: ['Next Js', 'Prisma', 'Tailwind CSS'],
+      imgUrl: 'projects/openTable.svg',
+      large: true,
+      link: 'https://open-table-sigma.vercel.app/',
+    },
+  ],
+  [
+    {
+      title: 'Job Finder',
+      tech: ['Angular JS', 'Spring Boot', 'PostgreSQL'],
+      imgUrl: 'projects/jobfinder.svg',
+      large: true,
+      link: 'https://github.com/orgs/jera-work/repositories',
+    },
+    {
+      title: 'Bootcamp Test',
+      tech: ['Angular JS', 'Spring Boot', 'PostgreSQL'],
+      imgUrl: 'projects/bootcamp.svg',
+      large: false,
+      link: 'https://github.com/ericodwr/bootcamp',
+    },
+  ],
+];
 
 export default function Home() {
+  const { scrollYProgress } = useScroll();
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const loader = document.getElementById('globalLoader');
+      if (loader) loader.style.display = 'none';
+    }
+  }, []);
+
+  const [scope, animate] = useAnimate();
+  const isInView = useInView(scope);
+
+  useEffect(() => {
+    if (isInView) {
+      animate('h2', { opacity: 1, x: 0 }, { duration: 2 });
+      animate('p', { opacity: 1, x: 0 }, { duration: 2 });
+      animate('div', { opacity: 1 }, { duration: 2, delay: 0.3 });
+    }
+  }, [isInView]);
+
+  const leftVariants = {
+    offscreen: {
+      x: -75,
+      opacity: 0,
+    },
+    onscreen: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        type: 'spring',
+        bounce: 0.4,
+        duration: 0.8,
+      },
+    },
+  };
+
+  const rightVariants = {
+    offscreen: {
+      x: 75,
+      opacity: 0,
+    },
+    onscreen: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        type: 'spring',
+        bounce: 0.4,
+        duration: 0.8,
+      },
+    },
+  };
+
+  const staggerVariants = {
+    offscreen: {
+      opacity: 0,
+    },
+    onscreen: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.25,
+      },
+    },
+  };
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+      <motion.div
+        className="progress-bar"
+        style={{ scaleX: scrollYProgress }}
+      />
+      <div id={'globalLoader'}>
+        <div className="loader animate-pulse">
+          <Image
+            src={'/logo.svg'}
+            alt="splash"
+            width={150}
+            height={150}
+            priority
+          />
         </div>
       </div>
+      <main className="relative">
+        {/* Navbar */}
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+        <div className="bg-[#E6E6E8] absolute w-full">
+          <nav className="container px-6 sm:px-0 flex justify-between items-center py-6">
+            <motion.div
+              initial={{ opacity: 0, x: -75 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{
+                duration: 1,
+                delay: 0.5,
+                ease: [0, 0.71, 0.2, 1.01],
+              }}
+            >
+              <Image
+                src={'/logo.svg'}
+                alt="logo"
+                width={36}
+                height={36}
+                priority
+              />
+            </motion.div>
+            <motion.ul
+              initial={{ opacity: 0, x: 75 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{
+                duration: 1,
+                delay: 0.5,
+                ease: [0, 0.71, 0.2, 1.01],
+              }}
+              className="flex gap-14"
+            >
+              <li>
+                <a href="#projects">Work</a>
+              </li>
+              <li>
+                <a href="#about">About</a>
+              </li>
+              <li>
+                <a href="#contact">Contact</a>
+              </li>
+            </motion.ul>
+          </nav>
+        </div>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
+        {/* Navbar */}
+
+        {/* Hero Section */}
+        <section className="bg-[#E6E6E8] h-screen flex items-center justify-center">
+          <div className="container  px-10 text-[#141010]">
+            <motion.h1
+              initial={{ opacity: 0, y: -75 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 1,
+                delay: 0.5,
+                ease: 'easeInOut',
+              }}
+              className="text-center leading-normal text-4xl  sm:text-5xl sm:leading-normal md:text-7xl md:leading-normal lg:text-8xl lg:leading-normal xl:text-9xl xl:leading-normal"
+            >
+              Creative Front End Developer
+            </motion.h1>
+            <motion.h3
+              initial={{ opacity: 0, y: 75 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 1,
+                delay: 1,
+                ease: 'easeInOut',
+              }}
+              className="text-center md:text-2xl text-xl mt-12"
+            >
+              Hi, My name is Erico Dwi and I'am Front End Developer
+            </motion.h3>
+          </div>
+        </section>
+        {/* Hero Section */}
+
+        {/* About Section */}
+        <motion.section
+          className="my-12 px-6 sm:px-10 lg:container xl:px-8"
+          ref={scope}
+          id="about"
         >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+          <motion.div className="grid md:grid-cols-4">
+            <motion.h2
+              initial={{ x: -75, opacity: 0 }}
+              className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl col-span-1"
+            >
+              About Me
+            </motion.h2>
+            <motion.p
+              initial={{ x: 75, opacity: 0 }}
+              className="mt-5 sm:text-xl sm:mt-8 sm:leading-10 md:mt-0 xl:text-2xl xl:leading-10 text-justify col-span-3"
+            >
+              Been working and learning as a Front End Developer based in
+              Jakarta, Indonesian. I have developed many types of Front Ends
+              with my current tech stack which is, React Js and Angular Js.
+              Passionated to implement from Design into real Web Application.
+              Also i had severed experience with Back End Developer. I always
+              love to learn new things, so if you have an idea to
+              collaborate just hit me up.
+            </motion.p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            className="mt-12 container flex justify-center items-center sm:px-8"
+          >
+            <Image
+              src={'/me.svg'}
+              alt="me"
+              width={0}
+              height={0}
+              className="w-auto h-auto"
+              priority
+            />
+          </motion.div>
+        </motion.section>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+        {/* Skill Section */}
+        <section>
+          <div className="mt-12 px-6 sm:px-10 lg:container xl:px-8">
+            <motion.div
+              initial="offscreen"
+              whileInView="onscreen"
+              viewport={{ once: true }}
+              className="grid md:grid-cols-4"
+            >
+              <motion.h2
+                className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl col-span-1"
+                variants={leftVariants}
+              >
+                Skills
+              </motion.h2>
+              <motion.div className="col-span-3">
+                <motion.p
+                  variants={rightVariants}
+                  className="mt-5 sm:text-xl sm:mt-8 sm:leading-10 md:mt-0 xl:text-2xl xl:leading-10 text-justify"
+                >
+                  With the experience I have as a Developer, these are the tech
+                  stack skills I currently have.
+                </motion.p>
+                <motion.div
+                  variants={staggerVariants}
+                  className="flex justify-around flex-wrap gap-x-10 sm:gap-x-16 lg:gap-x-24 xl:gap-x-36 gap-y-16 mt-12"
+                >
+                  {iconData.map((icon, i) => {
+                    return (
+                      <motion.div
+                        variants={{
+                          offscreen: {
+                            opacity: 0,
+                          },
+                          onscreen: {
+                            opacity: 1,
+                          },
+                        }}
+                        whileHover={{ scale: 1.2 }}
+                        key={i}
+                      >
+                        <Image
+                          className="w-10 sm:w-12 lg:w-14 xl:w-auto h-auto"
+                          src={`/tech/${icon}.svg`}
+                          width={0}
+                          height={0}
+                          alt={icon}
+                        />
+                      </motion.div>
+                    );
+                  })}
+                </motion.div>
+              </motion.div>
+            </motion.div>
+          </div>
+        </section>
+        {/* Skills Section */}
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+        {/* Projects Section */}
+        <section className="mt-32" id="projects">
+          <div className="mt-12 sm:px-10 lg:container xl:px-8">
+            <motion.div
+              initial="offscreen"
+              whileInView="onscreen"
+              viewport={{ once: true }}
+              className="grid px-6 sm:px-0 md:grid-cols-4"
+            >
+              <motion.h2
+                variants={leftVariants}
+                className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl col-span-1"
+              >
+                Projects Result
+              </motion.h2>
+              <motion.p
+                variants={rightVariants}
+                className="tsm:text-xl sm:mt-8 sm:leading-10 md:mt-0 xl:text-2xl xl:leading-10 text-justify col-span-3"
+              >
+                Here’s some projects that i’ve been develop lately.
+              </motion.p>
+            </motion.div>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+            <motion.div className="my-20">
+              {projects.map((project, i) => {
+                return (
+                  <motion.div
+                    initial="offscreen"
+                    whileInView="onscreen"
+                    viewport={{ once: true }}
+                    key={i}
+                    className="flex flex-col items-center md:items-end md:flex-row md:justify-between md:mb-20"
+                  >
+                    {project.map((p, j) => {
+                      return (
+                        <motion.div
+                          variants={{
+                            offscreen: {
+                              opacity: 0,
+                            },
+                            onscreen: {
+                              opacity: 1,
+                              transition: {
+                                duration: 1,
+                                delay: 0.8,
+                                ease: 'easeInOut',
+                              },
+                            },
+                          }}
+                          key={j}
+                          className={`flex flex-col md:justify-end w-10/12 mb-10 md:m-0 ${
+                            p.large ? 'md:w-1/2' : 'md:w-[40%]'
+                          }`}
+                        >
+                          <Image
+                            src={p.imgUrl}
+                            alt={p.title}
+                            width={0}
+                            height={0}
+                            className={`h-auto w-auto  
+                            `}
+                          />
+                          <div className="flex justify-between items-center mt-6">
+                            <div className="flex flex-col justify-between">
+                              <motion.h2
+                                variants={{
+                                  offscreen: {
+                                    opacity: 0,
+                                    y: -75,
+                                  },
+                                  onscreen: {
+                                    opacity: 1,
+                                    y: 0,
+                                    transition: {
+                                      duration: 1,
+                                      delay: 1.5,
+                                      ease: [0, 0.71, 0.2, 1.01],
+                                    },
+                                  },
+                                }}
+                                className="font-bold md:text-xl lg:text-2xl xl:text-3xl"
+                              >
+                                {p.title}
+                              </motion.h2>
+                              <motion.div
+                                variants={{
+                                  offscreen: {
+                                    opacity: 0,
+                                    y: 75,
+                                  },
+                                  onscreen: {
+                                    opacity: 1,
+                                    y: 0,
+                                    transition: {
+                                      duration: 1,
+                                      delay: 1.5,
+                                      ease: [0, 0.71, 0.2, 1.01],
+                                    },
+                                  },
+                                }}
+                                className="flex gap-2 sm:gap-5"
+                              >
+                                {p.tech.map((t, k) => {
+                                  return (
+                                    <p key={k} className="text-sm">
+                                      {t}
+                                    </p>
+                                  );
+                                })}
+                              </motion.div>
+                            </div>
+                            <motion.a
+                              variants={{
+                                offscreen: {
+                                  opacity: 0,
+                                  x: -75,
+                                },
+                                onscreen: {
+                                  opacity: 1,
+                                  x: 0,
+                                  transition: {
+                                    duration: 1,
+                                    delay: 2,
+                                    ease: [0, 0.71, 0.2, 1.01],
+                                  },
+                                },
+                              }}
+                              whileHover={{ scale: 1.2 }}
+                              whileTap={{ scale: 0.8 }}
+                              href={p.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              <Image
+                                src={'/arrow.svg'}
+                                alt={i}
+                                width={0}
+                                height={0}
+                                className="w-[2rem] sm:w-[3rem] lg:w-auto h-auto"
+                              />
+                            </motion.a>
+                          </div>
+                        </motion.div>
+                      );
+                    })}
+                  </motion.div>
+                );
+              })}
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Projects Section */}
+
+        {/* Contact Us Section */}
+        <section className="my-28" id="contact">
+          <motion.div
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true }}
+            className="mt-12 container px-8"
+          >
+            <motion.h1
+              variants={{
+                offscreen: {
+                  opacity: 0,
+                  y: -75,
+                },
+                onscreen: {
+                  opacity: 1,
+                  y: 0,
+                  transition: {
+                    duration: 1,
+                    delay: 1,
+                    ease: 'easeInOut',
+                  },
+                },
+              }}
+              className="leading-normal text-3xl sm:text-5xl sm:leading-normal md:text-6xl md:leading-normal lg:text-7xl lg:leading-normal xl:text-8xl xl:leading-normal text-center"
+            >
+              Unleash Creativity: Your Gateway to Collaboration
+            </motion.h1>
+
+            <motion.div className="flex justify-center items-center flex-col gap-8 mt-10">
+              <motion.div
+                variants={{
+                  offscreen: {
+                    opacity: 0,
+                    y: -75,
+                  },
+                  onscreen: {
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                      duration: 1,
+                      delay: 1.5,
+                      ease: 'easeInOut',
+                    },
+                  },
+                }}
+                className="flex justify-center items-center gap-10"
+              >
+                {contactsData.map((data, i) => {
+                  return (
+                    <motion.div
+                      whileHover={{ scale: 1.2 }}
+                      whileTap={{ scale: 0.8 }}
+                      key={i}
+                    >
+                      <a
+                        href={data.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Image
+                          src={`/contacts/${data.imgUrl}.svg`}
+                          alt={data}
+                          width={0}
+                          height={0}
+                          className="w-8 md:w-auto h-auto"
+                        />
+                      </a>
+                    </motion.div>
+                  );
+                })}
+              </motion.div>
+
+              <motion.button
+                variants={{
+                  offscreen: {
+                    opacity: 0,
+                    y: 75,
+                  },
+                  onscreen: {
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                      duration: 1,
+                      delay: 1.5,
+                      ease: 'easeInOut',
+                    },
+                  },
+                }}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                className="w-36 h-9 sm:w-40 sm:h-10 md:w-44 md:h-12 lg:w-48 lg:h-14 bg-black text-white rounded-lg"
+              >
+                <a href="mailto:erikodwirosadi12@gmail.com">Contact Me</a>
+              </motion.button>
+            </motion.div>
+          </motion.div>
+        </section>
+
+        {/* Contact Us Section */}
+      </main>
+
+      <footer className="bg-[#E6E6E8] h-14 flex items-center">
+        <p className="ml-4 sm:ml-10 text-xs">
+          ©2024 designed & developed by ergowork. <br /> Jakarta, Indonesia.
+        </p>
+      </footer>
+    </>
   );
 }
