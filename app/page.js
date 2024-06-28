@@ -28,6 +28,22 @@ const contactsData = [
 const projects = [
   [
     {
+      title: 'Busana90s',
+      tech: ['Next Js', 'Express JS', 'MySQL'],
+      imgUrl: 'projects/busana90s.svg',
+      large: false,
+      link: 'https://busana90s.shop/',
+    },
+    {
+      title: 'Mitra Lancar',
+      tech: ['Next Js', 'Tailwind CSS'],
+      imgUrl: 'projects/mitralancar.svg',
+      large: true,
+      link: 'https://mitralancar.com/',
+    },
+  ],
+  [
+    {
       title: 'Crownsco',
       tech: ['React Js', 'Redux', 'Firebase'],
       imgUrl: 'projects/crowns.svg',
