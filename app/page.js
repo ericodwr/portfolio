@@ -44,22 +44,6 @@ const projects = [
   ],
   [
     {
-      title: 'Crownsco',
-      tech: ['React Js', 'Redux', 'Firebase'],
-      imgUrl: 'projects/crowns.svg',
-      large: false,
-      link: 'https://crowns-clot.netlify.app/',
-    },
-    {
-      title: 'Open Table',
-      tech: ['Next Js', 'Prisma', 'Tailwind CSS'],
-      imgUrl: 'projects/openTable.svg',
-      large: true,
-      link: 'https://open-table-sigma.vercel.app/',
-    },
-  ],
-  [
-    {
       title: 'Job Finder',
       tech: ['Angular JS', 'Spring Boot', 'PostgreSQL'],
       imgUrl: 'projects/jobfinder.svg',
@@ -72,6 +56,22 @@ const projects = [
       imgUrl: 'projects/bootcamp.svg',
       large: false,
       link: 'https://github.com/ericodwr/bootcamp',
+    },
+  ],
+  [
+    {
+      title: 'Crownsco',
+      tech: ['React Js', 'Redux', 'Firebase'],
+      imgUrl: 'projects/crowns.svg',
+      large: false,
+      link: 'https://crowns-clot.netlify.app/',
+    },
+    {
+      title: 'Open Table',
+      tech: ['Next Js', 'Prisma', 'Tailwind CSS'],
+      imgUrl: 'projects/openTable.svg',
+      large: true,
+      link: 'https://open-table-sigma.vercel.app/',
     },
   ],
 ];
