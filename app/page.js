@@ -253,13 +253,14 @@ export default function Home() {
               initial={{ x: 75, opacity: 0 }}
               className="mt-5 sm:text-xl sm:mt-8 sm:leading-10 md:mt-0 xl:text-2xl xl:leading-10 text-justify col-span-3"
             >
-              Been working and learning as a Front End Developer based in
-              Jakarta, Indonesian. I have developed many types of Front Ends
-              with my current tech stack which is, React Js and Angular Js.
-              Passionated to implement from Design into real Web Application.
-              Also i had severed experience with Back End Developer. I always
-              love to learn new things, so if you have an idea to
-              collaborate just hit me up.
+              Experienced 2 years' working as Full stack Web Developer handling
+              multi-case programs and mostly handling Front End side, blending
+              the art of design with programming and coding/writing skills to
+              deliver the immersive and engaging user experience through
+              efficient desktop and mobile web platforms, reliability
+              performance and proactive feature optimization. Eager to learn
+              something new, tackle more complex problems, and find a creative
+              way to maximize user interface and user efficiency.
             </motion.p>
           </motion.div>
           <motion.div
