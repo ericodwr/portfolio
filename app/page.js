@@ -218,7 +218,7 @@ export default function Home() {
               }}
               className="text-center leading-normal text-4xl  sm:text-5xl sm:leading-normal md:text-7xl md:leading-normal lg:text-8xl lg:leading-normal xl:text-9xl xl:leading-normal"
             >
-              Creative Front End Developer
+              Creative Fullstack Developer
             </motion.h1>
             <motion.h3
               initial={{ opacity: 0, y: 75 }}
