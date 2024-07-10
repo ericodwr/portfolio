@@ -230,7 +230,7 @@ export default function Home() {
               }}
               className="text-center md:text-2xl text-xl mt-12"
             >
-              Hi, My name is Erico Dwi and I'am Front End Developer
+              Hi, My name is Erico Dwi and I'am Fullstack Developer
             </motion.h3>
           </div>
         </section>
