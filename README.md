@@ -3,7 +3,7 @@
 Welcome to my personal portfolio! This project is a showcase of my skills, projects, and experience as a Fullstack Developer. It's built with a focus on modern design, smooth user experience, and high performance.
 
 ## 🚀 Live Demo
-Check out the live version here: [ericodwr.vercel.app](https://ericodwr.vercel.app/)
+Check out the live version here: [ericodwr.space](https://www.ericodwr.space/)
 
 ## ✨ Key Features
 - **Modern Tech Stack:** Built with Next.js 14 and TypeScript.
