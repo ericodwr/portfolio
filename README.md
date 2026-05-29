@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Creative Fullstack Developer Portfolio
 
-## Getting Started
+Welcome to my personal portfolio! This project is a showcase of my skills, projects, and experience as a Fullstack Developer. It's built with a focus on modern design, smooth user experience, and high performance.
 
-First, run the development server:
+## 🚀 Live Demo
+Check out the live version here: [ericodwr.vercel.app](https://ericodwr.vercel.app/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## ✨ Key Features
+- **Modern Tech Stack:** Built with Next.js 14 and TypeScript.
+- **Dark Mode:** Fully integrated light and dark themes using `next-themes`.
+- **Responsive Design:** Completely mobile-friendly with a custom-built animated hamburger menu.
+- **High-End Animations:** 
+  - Snappy entrance animations using **Framer Motion** spring physics.
+  - Interactive micro-interactions (magnetic lift and wiggle) on skill icons.
+  - Smooth scroll-triggered reveals and progress tracking.
+- **Optimized Performance:** Fast load times and optimized assets.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Tech Stack
+- **Framework:** [Next.js 14](https://nextjs.org/) (App Router)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **Animations:** [Framer Motion](https://www.framer.com/motion/)
+- **Theme Management:** [next-themes](https://github.com/pacocoursey/next-themes)
+- **Language:** [TypeScript](https://www.typescriptlang.org/)
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 📂 Project Structure
+- `app/`: Main application logic.
+  - `components/`: Modular UI sections (Hero, About, Skills, Projects, Contact).
+  - `constants/`: Centralized data and animation variants.
+  - `hooks/`: Reusable custom React hooks.
+- `public/`: Optimized SVGs and assets.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 🛠️ Installation & Setup
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/ericodwr/portfolio.git
+   ```
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+3. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
+4. **Open in browser:**
+   Navigate to [http://localhost:3000](http://localhost:3000)
 
-## Learn More
+## 📝 License
+This project is open-source and available under the MIT License.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+---
+Designed & Developed with ❤️ by **Erico Dwi Rosadi**
