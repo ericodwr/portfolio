@@ -11,9 +11,21 @@ export function AboutSection() {
 
   useEffect(() => {
     if (isInView) {
-      animate("h2", { opacity: 1, x: 0 }, { duration: 0.3 });
-      animate("p", { opacity: 1, x: 0 }, { duration: 0.3 });
-      animate("div", { opacity: 1 }, { duration: 0.3, delay: 0 });
+      animate(
+        "h2",
+        { opacity: 1, x: 0 },
+        { type: "spring", stiffness: 100, damping: 20 }
+      );
+      animate(
+        "p",
+        { opacity: 1, x: 0 },
+        { type: "spring", stiffness: 100, damping: 20, delay: 0.2 }
+      );
+      animate(
+        "div",
+        { opacity: 1, y: 0 },
+        { type: "spring", stiffness: 100, damping: 20, delay: 0.4 }
+      );
     }
   }, [isInView, animate]);
 
@@ -25,13 +37,13 @@ export function AboutSection() {
     >
       <motion.div className="grid md:grid-cols-4">
         <motion.h2
-          initial={{ x: -75, opacity: 0 }}
+          initial={{ x: -50, opacity: 0 }}
           className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl col-span-1"
         >
           About Me
         </motion.h2>
         <motion.p
-          initial={{ x: 75, opacity: 0 }}
+          initial={{ x: 50, opacity: 0 }}
           className="mt-5 sm:text-xl sm:mt-8 sm:leading-10 md:mt-0 xl:text-2xl xl:leading-10 text-justify col-span-3"
         >
           Experienced 2 years' working as Full stack Web Developer handling
@@ -45,7 +57,7 @@ export function AboutSection() {
         </motion.p>
       </motion.div>
       <motion.div
-        initial={{ opacity: 0 }}
+        initial={{ opacity: 0, y: 50 }}
         className="mt-12 container flex justify-center items-center sm:px-8"
       >
         <Image

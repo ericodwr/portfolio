@@ -62,7 +62,7 @@ export function SkillsSection() {
             </motion.p>
             <motion.div
               variants={staggerVariants}
-              className="flex justify-around flex-wrap gap-x-10 sm:gap-x-16 lg:gap-x-24 xl:gap-x-36 gap-y-16 mt-12"
+              className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-x-8 gap-y-12 sm:gap-x-12 sm:gap-y-16 mt-12"
             >
               {iconData.map((icon: string, i: number) => {
                 return (
@@ -75,11 +75,19 @@ export function SkillsSection() {
                         opacity: 1,
                       },
                     }}
-                    whileHover={{ scale: 1.2 }}
+                    whileHover={{ 
+                      scale: 1.1, 
+                      y: -10,
+                      rotate: [0, -5, 5, 0],
+                      transition: { duration: 0.3 }
+                    }}
                     key={i}
+                    className="flex justify-center items-center"
                   >
                     <Image
-                      className="w-10 sm:w-12 lg:w-14 xl:w-auto h-auto"
+                      className={`w-10 sm:w-12 lg:w-14 xl:w-auto h-auto ${
+                        ["nextjs", "prisma", "nodejs"].includes(icon) ? "dark-invert" : ""
+                      }`}
                       src={`/tech/${icon}.svg`}
                       width={0}
                       height={0}

@@ -3,16 +3,20 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background: #e6e6e8;
+  --foreground: #141010;
+  --navbar-bg: #e6e6e8;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.dark {
+  --background: #141010;
+  --foreground: #e6e6e8;
+  --navbar-bg: #141010;
+}
+
+@layer base {
+  body {
+    @apply bg-[var(--background)] text-[var(--foreground)] transition-colors duration-300;
   }
 }
 
@@ -35,12 +39,19 @@ html {
 #globalLoader {
   position: fixed;
   z-index: 1700;
-  background-color: #fff;
+  background-color: var(--background);
   display: flex;
   width: 100vw;
   height: 100vh;
   justify-content: center;
   align-items: center;
+  transition: background-color 0.3s;
+}
+
+@layer utilities {
+  .dark-invert {
+    @apply dark:invert;
+  }
 }
 
 .loader {

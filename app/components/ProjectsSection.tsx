@@ -175,7 +175,7 @@ export function ProjectsSection() {
                             alt="arrow"
                             width={0}
                             height={0}
-                            className="w-[2rem] sm:w-[3rem] lg:w-auto h-auto"
+                            className="w-[2rem] sm:w-[3rem] lg:w-auto h-auto dark-invert"
                           />
                         </motion.a>
                       </div>

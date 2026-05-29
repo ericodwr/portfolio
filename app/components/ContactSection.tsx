@@ -18,15 +18,15 @@ export function ContactSection() {
           variants={{
             offscreen: {
               opacity: 0,
-              y: -75,
+              y: -50,
             },
             onscreen: {
               opacity: 1,
               y: 0,
               transition: {
-                duration: 0.4,
-                delay: 0,
-                ease: "easeInOut",
+                type: "spring",
+                stiffness: 100,
+                damping: 20,
               },
             },
           }}
@@ -40,15 +40,16 @@ export function ContactSection() {
             variants={{
               offscreen: {
                 opacity: 0,
-                y: -75,
+                y: 30,
               },
               onscreen: {
                 opacity: 1,
                 y: 0,
                 transition: {
-                  duration: 1,
-                  delay: 0,
-                  ease: "easeInOut",
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 20,
+                  delay: 0.2,
                 },
               },
             }}
@@ -57,8 +58,8 @@ export function ContactSection() {
             {contactsData.map((data: Contact, i: number) => {
               return (
                 <motion.div
-                  whileHover={{ scale: 1.2 }}
-                  whileTap={{ scale: 0.8 }}
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  whileTap={{ scale: 0.9 }}
                   key={i}
                 >
                   <a href={data.link} target="_blank" rel="noopener noreferrer">
@@ -67,7 +68,7 @@ export function ContactSection() {
                       alt={data.imgUrl}
                       width={0}
                       height={0}
-                      className="w-8 md:w-auto h-auto"
+                      className={`w-8 md:w-auto h-auto ${data.imgUrl === 'github' ? 'dark-invert' : ''}`}
                     />
                   </a>
                 </motion.div>
@@ -79,21 +80,22 @@ export function ContactSection() {
             variants={{
               offscreen: {
                 opacity: 0,
-                y: 75,
+                y: 30,
               },
               onscreen: {
                 opacity: 1,
                 y: 0,
                 transition: {
-                  duration: 1,
-                  delay: 0,
-                  ease: "easeInOut",
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 20,
+                  delay: 0.4,
                 },
               },
             }}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="w-36 h-9 sm:w-40 sm:h-10 md:w-44 md:h-12 lg:w-48 lg:h-14 bg-black text-white rounded-lg"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="w-36 h-9 sm:w-40 sm:h-10 md:w-44 md:h-12 lg:w-48 lg:h-14 bg-[var(--foreground)] text-[var(--background)] rounded-lg transition-colors duration-300"
           >
             <a href="mailto:erikodwirosadi12@gmail.com">Contact Me</a>
           </motion.button>
